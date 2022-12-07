@@ -1,10 +1,12 @@
-import products from './Products';
-
+import { useState } from 'react';
+import Fproduct from './Products';
 const App = () => {
     return (
         <>
-        <h1>hi</h1>
-        <product/>
+            <Fproduct />
+            <Fproduct />
+            <Fproduct />
+            <Fproduct />
         </>
     );
 }
