@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+
+}
+
+.xaa {
+
+height: 20px;
+width: 25 px;
+background-color: blue;
+
+}
+.xa{
+    display: inline;
+    
+}
