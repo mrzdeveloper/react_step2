@@ -21,7 +21,8 @@ const App = () => {
         </>
     );
     function Pdelet(Pid) {
-        const pnew = products.filter((p, index) => p !== Pid)
+
+        const pnew = products.filter(p => p.id !== Pid)
         setproducts(pnew);
     }
 }

@@ -33,7 +33,7 @@ const Fproduct = ({ Pname, count: counts, id, ondelet }) => {
 
     }
     function delet() {
-        ondelet(id)
+        ondelet(id);
     }
     function format() {
         if (count <= 0) {
