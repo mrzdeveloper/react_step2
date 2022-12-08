@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import './style.css'
 
-const Fproduct = (props) => {
+const Fproduct = ({ Pname, count: counts, id, ondelet }) => {
 
-    const [count, setcount] = useState(props.count)
+    const [count, setcount] = useState(counts)
     return (
         <>
             <div>
-                <span className='m-2 '>{props.id}</span>
-                <div className='d-inline'>{props.productname}</div>
+                <span className='m-2 '>{id}</span>
+                <div className='d-inline'>{Pname}</div>
                 <div className='xa'>
                     <div className='xa bg-primary badge'>{format()}</div>
                     <button onClick={inc} className='m-2 btn btn-sm btn-primary'>+</button>
@@ -33,8 +33,7 @@ const Fproduct = (props) => {
 
     }
     function delet() {
-        setcount(0)
-
+        ondelet(id)
     }
     function format() {
         if (count <= 0) {
