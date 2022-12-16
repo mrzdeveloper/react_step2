@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './style.css'
 
-const Fproduct = ({ Pname, count: counts, id, ondelet }) => {
+const Fproduct = ({ Pname, count: counts, id, ondelet, productid, oninc, ondec, ondelet }) => {
 
     const [count, setcount] = useState(counts)
     return (
@@ -19,21 +19,16 @@ const Fproduct = ({ Pname, count: counts, id, ondelet }) => {
         </>
 
     );
+    handeldelet(id)
 
     function inc() {
-        setcount(count + 1)
-
+        oninc(id)
+ 
     }
 
     function dec() {
-        if (count <= 0) {
-            setcount(0)
-        } else
-            setcount(count - 1)
+        ondec(id)
 
-    }
-    function delet() {
-        ondelet(id);
     }
     function format() {
         if (count <= 0) {

@@ -12,8 +12,14 @@ const App = () => {
     ])
     return (
         <>
+            <button onClick={handlereset} className='btn btn-sm btn-secondary'>ClearAll</button>
             {products.map((p, index) => (
-                <Fproduct key={index} id={p.id} Pname={p.productname} count={p.count} ondelet={Pdelet}  >
+                <Fproduct
+
+                    oninc={handelinc}
+
+                    ondec={handeldec}
+                    onkey={index} id={p.id} Pname={p.productname} count={p.count} ondelet={Pdelet}  >
                     <p>hi product</p>
                 </Fproduct>
 
@@ -21,9 +27,29 @@ const App = () => {
         </>
     );
     function Pdelet(Pid) {
-
         const pnew = products.filter(p => p.id !== Pid)
         setproducts(pnew);
+    }
+    function handelreset() {
+        const newproducts = products.map(p => {
+            p.count = 0
+            return p
+        })
+
+        setproducts(newproducts)
+
+    }
+    function handelinc(productid) {
+        const newproducts = [...products];
+        const index = newproducts.findIndex(p => p.id === productid);
+        newproducts = [index].count += 1;
+        setproducts(newproducts)
+    }
+    function handeldec(productid) {
+        const newproducts = [...products];
+        const index = newproducts.findIndex(p => p.id === productid);
+        newproducts = [index].count -= 1;
+        setproducts(newproducts)
     }
 }
 export default App;
